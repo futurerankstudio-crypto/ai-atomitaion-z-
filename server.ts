@@ -16,7 +16,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 app.use(express.json());
 
 // Local demo response engine. No Google AI Studio or external AI keys required.
-const ai = { models: { generateContent: async ({ contents }: { contents: string }) => ({
+const ai = { models: { generateContent: async ({ contents }: { model?: string; contents: string }) => ({
   text: 'Demo automation draft: Thank you for your message. Our team will review your request and follow up with the appropriate next steps. Please confirm any important details.'
 }) } };
 
